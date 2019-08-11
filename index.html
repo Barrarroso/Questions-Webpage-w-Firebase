@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Interview Questions</title>
+	<script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-database.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+	<div>
+		<h1>Interview Questions</h1>
+	</div>
+	
+	<div id="question-container">
+		<label>Select the category</label><select name="category" id="category-list" onchange="selectCategory()">
+		</select>
+		<label>Select the question</label>
+		<select name="question" id="question-list">
+		</select>
+	</div>
+	<br>
+	<button onclick="makeLobby()" class="my-button">Make Lobby(WIP)</button>
+
+	<script src="script.js"></script>
+</body>
+</html>
