@@ -13,15 +13,40 @@
 		<h1>Interview Questions</h1>
 	</div>
 	
-	<div id="question-container">
-		<label>Select the category</label><select name="category" id="category-list" onchange="selectCategory()">
-		</select>
-		<label>Select the question</label>
-		<select name="question" id="question-list">
-		</select>
+	<div id="input-name-container">
+		<form onsubmit="return false"> <!--ENTER key works as submit button-->
+			<h2>Welcome, what's your name?</h2>
+			<input type="user" placeholder="Username" id="username-field" />
+			<input type="submit" class="my-button" onclick="submitUsername()"></input>
+		</form>
 	</div>
-	<br>
-	<button onclick="makeLobby()" class="my-button">Make Lobby(WIP)</button>
+
+	<div id="main-menu-container">
+		<form onsubmit="return false"> <!--ENTER key works as submit button-->
+			<h2>Join Lobby</h2>
+			<input type="text" placeholder="Lobby ID-e.g.(CI2k_HHwgIpoDKCIZvv)" id="lobby-id-field">
+			<input type="submit" class="my-button" onclick="joinLobby()">
+		</form>
+
+		<h2>Create Lobby</h2>
+		<button class="my-button" onclick="makeLobby()">Create</button>
+	</div>
+	
+	<!--Inside a lobby-->
+	<div id="lobby-question-container">
+		<input type="text" id="copy-to-clipboard" value="Prueba" style="display: none" />
+		<h3 id="lobby-id-info">THISISANID</h3>
+		<button class="my-button" onclick="copyLobbyKeyToClipboard()">Copy to clipboard</button>
+		<h2>Selecting question...</h2>
+	</div>
+	<div id="lobby-host-container">
+		<h2>You're the host</h2>
+		<label>Select the category</label><select name="category" id="category-list" onchange="selectCategory()"></select>
+
+		<label>Select the question</label><select name="question" id="question-list"></select>
+
+		<button class="my-button" onclick="submitQuestion()">Submit</button>
+	</div>
 
 	<script src="script.js"></script>
 </body>
