@@ -103,11 +103,10 @@ function joinLobby(lobbyID = lobby_id_field.value){ //Get field value by default
 }
 
 function makeLobby(){
-  let userId = myUser.uid; //TODO This shouldn't be necessary
   let data = {
-    host: userId,
+    host: myUser.uid,
     users:{
-      userId: myUsername
+      [myUser.uid]: myUsername
     },
     question:""
   };
